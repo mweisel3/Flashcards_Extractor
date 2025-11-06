@@ -59,6 +59,30 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
+            position: relative; /* For tooltip */
+        }
+
+        /* Tooltip */
+        .btn::after {
+            content: attr(title);
+            position: absolute;
+            bottom: -30px; /* Position below the button */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+        }
+        .btn:hover::after {
+            opacity: 1;
+            visibility: visible;
         }
 
         .btn-header {
@@ -315,7 +339,7 @@
             </div>
 
             <div class="modal-actions">
-                <button class="btn btn-cancel" title="Cancel" onclick="closeModal()">❌</button>
+                <button classF="btn btn-cancel" title="Cancel" onclick="closeModal()">❌</button>
                 <button class="btn btn-success" title="Save Card" onclick="saveCard()">✔️</button>
             </div>
         </div>
@@ -410,7 +434,6 @@
 
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
             const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
             // Create safe filename
             const safeTitle = (currentData.title || "deck").replace(/[^a-z0-9_-\s]/gi, '').replace(/ /g, '_');
             downloadAnchorNode.setAttribute("download", safeTitle + ".json");
@@ -509,7 +532,8 @@
                 backContent.textContent = card.back;
             } else {
                 // Quiz Rendering
-                frontContent.textContent = "Q: "s + (card.question || "");
+                // *** THIS WAS THE LINE WITH THE TYPO ***
+                frontContent.textContent = "Q: " + (card.question || "");
 
                 let optionsHtml = '<div class="quiz-options">';
                 if (card.options) {
@@ -643,6 +667,6 @@
         // --- Initial App Load ---
         renderActiveCard(); // Set initial flipper state
 
-    </script>
+    </script>WWW
 </body>
 </html>
