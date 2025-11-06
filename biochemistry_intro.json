@@ -1,0 +1,189 @@
+{
+  "title": "biochemistry_intro",
+  "flashcards": [
+    {
+      "front": "What is the primary focus of the science of biochemistry?",
+      "back": "It describes the structure, organization, and activity of biological macromolecules and their subunits in chemical terms."
+    },
+    {
+      "front": "One of the key characteristics of living organisms is that they conduct a continuous exchange of _____ and _____ with their environment.",
+      "back": "matter; energy"
+    },
+    {
+      "front": "What fundamental principle explains the underlying similarity among all life forms despite their vast diversity?",
+      "back": "All life forms share a common evolutionary origin."
+    },
+    {
+      "front": "What is the universal 'energy currency' in all biological systems?",
+      "back": "ATP (adenosine triphosphate)."
+    },
+    {
+      "front": "What factor sets the lower limit for a cell's size?",
+      "back": "The minimum number of each type of biomolecule required for the cell to function and reproduce."
+    },
+    {
+      "front": "What physical process sets the upper limit for a cell's size?",
+      "back": "The rate of diffusion of solute molecules within an aqueous environment."
+    },
+    {
+      "front": "Term: Atom",
+      "back": "The smallest unit of a chemical element."
+    },
+    {
+      "front": "Term: Molecule",
+      "back": "A group of atoms bonded together by chemical bonds."
+    },
+    {
+      "front": "Term: Organelle",
+      "back": "A membrane-enclosed structure within a cell that performs specific cellular processes."
+    },
+    {
+      "front": "Term: Cell",
+      "back": "The smallest structural and functional unit of an organism."
+    },
+    {
+      "front": "Term: Tissue",
+      "back": "A group of specialized cells and their surrounding materials that work together to perform a specific function."
+    },
+    {
+      "front": "What is the monomeric subunit that forms the macromolecule protein?",
+      "back": "Amino acid."
+    },
+    {
+      "front": "What is the monomeric subunit that forms the macromolecule nucleic acid (DNA/RNA)?",
+      "back": "Nucleotide."
+    },
+    {
+      "front": "What is the monomeric subunit that forms the macromolecule polysaccharide?",
+      "back": "Monosaccharide (simple sugar)."
+    },
+    {
+      "front": "The four most abundant elements, making up over 99% of the mass of most organisms, are _____, _____, _____, and _____.",
+      "back": "hydrogen (H), oxygen (O), carbon (C), and nitrogen (N)"
+    },
+    {
+      "front": "What property of elements like H, O, C, and N allows them to form the very stable molecules found in living organisms?",
+      "back": "They are the lightest elements capable of forming strong covalent bonds."
+    },
+    {
+      "front": "How is an ionic (electrostatic) bond formed?",
+      "back": "It is formed by the electrostatic attraction between oppositely charged ions, which result from the transfer of electrons from one atom to another."
+    },
+    {
+      "front": "In an ionic bond, what is an anion?",
+      "back": "The atom that gains an electron and becomes negatively charged."
+    },
+    {
+      "front": "In an ionic bond, what is a cation?",
+      "back": "The atom that loses an electron and becomes positively charged."
+    },
+    {
+      "front": "Term: Oxidation-reduction (redox) reaction",
+      "back": "A chemical reaction that involves the transfer of electrons from one substance to another."
+    },
+    {
+      "front": "In a redox reaction, the substance that accepts electrons is called the _____ agent.",
+      "back": "oxidizing"
+    },
+    {
+      "front": "In a redox reaction, the substance that donates electrons is called the _____ agent.",
+      "back": "reducing"
+    },
+    {
+      "front": "What type of chemical bond is formed from the sharing of valence electrons between two non-metal atoms?",
+      "back": "A covalent bond."
+    },
+    {
+      "front": "What is a pure covalent bond?",
+      "back": "A covalent bond between two identical atoms where electrons are shared equally."
+    },
+    {
+      "front": "What is a polar covalent bond?",
+      "back": "A covalent bond between two different atoms where electrons are shared unequally, creating partial positive and negative charges."
+    },
+    {
+      "front": "Term: Electronegativity",
+      "back": "A measure of the tendency of an atom to attract a bonding pair of electrons."
+    },
+    {
+      "front": "Why is the carbon atom central to the structure of organic compounds?",
+      "back": "Its electronic structure, with four valence electrons, allows it to form a vast variety of stable compounds."
+    },
+    {
+      "front": "Carbon atoms can link together to form a variety of structures, including linear chains, branched chains, and _____ structures.",
+      "back": "cyclic"
+    },
+    {
+      "front": "What is the characteristic geometry of the four single bonds formed by a carbon atom?",
+      "back": "Tetrahedral, with bond angles of about 109.5 degrees."
+    },
+    {
+      "front": "What type of motion is possible around a carbon-carbon single bond that is not possible around a double bond?",
+      "back": "Free rotation."
+    },
+    {
+      "front": "The geometry of a carbon-carbon double bond is described as _____ and rigid.",
+      "back": "planar"
+    },
+    {
+      "front": "Term: Hydrocarbons",
+      "back": "Organic compounds consisting entirely of hydrogen and carbon atoms."
+    },
+    {
+      "front": "How do saturated hydrocarbons differ from unsaturated hydrocarbons?",
+      "back": "Saturated hydrocarbons contain only single carbon-carbon bonds, while unsaturated hydrocarbons contain one or more double or triple bonds."
+    },
+    {
+      "front": "What is the basic structure of aromatic compounds, which are involved in many biological processes?",
+      "back": "The benzene ring ($C_6H_6$)."
+    },
+    {
+      "front": "Term: Structural isomers",
+      "back": "Molecules that have the same molecular formula but different structural arrangements of atoms."
+    },
+    {
+      "front": "Term: Stereoisomers",
+      "back": "Molecules that have the same chemical formula and bond connectivity but differ in the three-dimensional orientation of their atoms in space (configuration)."
+    },
+    {
+      "front": "The fixed spatial arrangement of atoms in a stereoisomer, which can only be changed by breaking and re-forming covalent bonds, is called its _____.",
+      "back": "configuration"
+    },
+    {
+      "front": "Term: Geometric isomers (cis-trans isomers)",
+      "back": "Stereoisomers that differ in the arrangement of substituent groups with respect to a non-rotating double bond."
+    },
+    {
+      "front": "In geometric isomers, what does the 'cis' configuration signify?",
+      "back": "The substituent groups are on the same side of the double bond."
+    },
+    {
+      "front": "In geometric isomers, what does the 'trans' configuration signify?",
+      "back": "The substituent groups are on opposite sides of the double bond."
+    },
+    {
+      "front": "What is a chiral carbon (or asymmetric carbon)?",
+      "back": "A carbon atom that is attached to four different types of atoms or groups of atoms."
+    },
+    {
+      "front": "A molecule that cannot be superimposed on its mirror image is described as _____.",
+      "back": "chiral"
+    },
+    {
+      "front": "A molecule that can be superimposed on its mirror image is described as _____.",
+      "back": "achiral"
+    },
+    {
+      "front": "Term: Enantiomers",
+      "back": "Stereoisomers that are non-superimposable mirror images of each other."
+    },
+    {
+      "front": "Term: Diastereomers",
+      "back": "Stereoisomers that are not mirror images of each other."
+    },
+    {
+      "front": "Term: Conformation",
+      "back": "The spatial arrangement of substituent groups that are free to assume different positions in space, without breaking any bonds, due to freedom of rotation around single bonds."
+    }
+  ]
+}

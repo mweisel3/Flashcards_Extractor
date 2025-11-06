@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Deck Manager</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --bg-light: #f8f9fa;
+            --border-color: #dee2e6;
+            --text-dark: #202124;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 { margin: 0; font-size: 1.5rem; }
+
+        .toolbar { display: flex; gap: 10px; }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary { background-color: var(--primary-color); color: white; }
+        .btn-primary:hover { background-color: #3367d6; }
+        .btn-secondary { background-color: #e8eaed; color: var(--text-dark); }
+        .btn-secondary:hover { background-color: #dadce0; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .btn-danger:hover { background-color: #c82333; }
+
+        /* Main Two-Column Layout */
+        main {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            overflow: hidden; /* Prevents main from growing beyond viewport */
+        }
+
+        #list-column {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #list-header {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #card-list {
+            flex: 1;
+            overflow-y: auto;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .list-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .list-item:hover { background-color: #f1f3f4; }
+        .list-item.active {
+            background-color: #e8f0fe;
+            color: var(--primary-color);
+            font-weight: 500;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        #flipper-column {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Flipper Card Styles */
+        .flipper-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+        }
+
+        .flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flipper.flipped { transform: rotateY(180deg); }
+
+        .flipper-front, .flipper-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .flipper-back { transform: rotateY(180deg); background-color: #fff8e1; }
+
+        .card-content {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            white-space: pre-wrap; /* Preserves newlines */
+        }
+
+        .quiz-options { text-align: left; width: 100%; margin-top: 20px; }
+        .quiz-option {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        .quiz-option.correct { background-color: #d4edda; border-color: #c3e6cb; }
+
+        #empty-state {
+            text-align: center;
+            color: #5f6368;
+        }
+
+        /* Controls below the flipper */
+        .flipper-controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            display: none; justify-content: center; align-items: center; z-index: 100;
+        }
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .modal h2 { margin-top: 0; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 500; }
+        textarea, input[type="text"] {
+            width: 100%; padding: 10px; border: 1px solid var(--border-color);
+            border-radius: 4px; box-sizing: border-box; font-family: inherit;
+        }
+        textarea { resize: vertical; height: 100px; }
+
+        .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="deck-title">Study Deck Manager</h1>
+        <div class="toolbar">
+            <input type="file" id="file-upload" accept=".json" style="display: none">
+            <button class="btn-secondary" onclick="document.getElementById('file-upload').click()">📂 Load JSON</button>
+            <button class="btn-primary" id="save-btn" disabled onclick="downloadData()">💾 Save JSON</button>
+        </div>
+    </header>
+
+    <main id="main-app" style="display: none;">
+        <section id="list-column">
+            <div id="list-header">
+                <span id="card-count">0 cards</span>
+                <button class="btn-primary" onclick="openAddModal()">+ Add Card</button>
+            </div>
+            <ul id="card-list">
+                </ul>
+        </section>
+
+        <section id="flipper-column">
+            <div class="flipper-container" onclick="flipCard()">
+                <div class="flipper" id="active-flipper">
+                    <div class="flipper-front">
+                        <div class="card-content" id="front-content">Select a card</div>
+                    </div>
+                    <div class="flipper-back">
+                         <div class="card-content" id="back-content"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flipper-controls">
+                <button class="btn-secondary" onclick="flipCard()">🔄 Flip</button>
+                <button class="btn-secondary" onclick="openEditModal()">✏️ Edit</button>
+                <button class="btn-danger" onclick="deleteCurrentCard()">🗑️ Delete</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="empty-state">
+        <h2>No Deck Loaded</h2>
+        <p>Please load a JSON file to start studying.</p>
+    </div>
+
+    <div class="modal-overlay" id="card-modal">
+        <div class="modal">
+            <h2 id="modal-title">Edit Card</h2>
+            <div id="modal-form-flashcard">
+                <div class="form-group">
+                    <label for="edit-front">Front:</label>
+                    <textarea id="edit-front"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-back">Back:</label>
+                    <textarea id="edit-back"></textarea>
+                </div>
+            </div>
+             <div id="modal-form-quiz" style="display: none;">
+                <p><em>Editing complex quiz structures is not fully supported in this simple view yet. You can edit the main question text below.</em></p>
+                <div class="form-group">
+                    <label for="edit-question">Question:</label>
+                    <textarea id="edit-question"></textarea>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn-primary" onclick="saveCard()">Save Card</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Global State ---
+        let currentData = { title: "New Deck", type: null, cards: [] };
+        let selectedIndex = -1;
+        let isFlipped = false;
+
+        // --- DOM Elements ---
+        const mainApp = document.getElementById('main-app');
+        const emptyState = document.getElementById('empty-state');
+        const deckTitle = document.getElementById('deck-title');
+        const cardList = document.getElementById('card-list');
+        const cardCount = document.getElementById('card-count');
+        const saveBtn = document.getElementById('save-btn');
+        const flipper = document.getElementById('active-flipper');
+        const frontContent = document.getElementById('front-content');
+        const backContent = document.getElementById('back-content');
+        const cardModal = document.getElementById('card-modal');
+
+        // --- Event Listeners ---
+        document.getElementById('file-upload').addEventListener('change', handleFileUpload);
+
+        // --- File Handling ---
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const loadedData = JSON.parse(e.target.result);
+                    loadDeck(loadedData);
+                } catch (error) {
+                    alert("Error parsing JSON file: " + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function loadDeck(data) {
+            // Auto-detect type based on keys
+            if (data.flashcards) {
+                currentData = { title: data.title, type: 'flashcards', cards: data.flashcards };
+            } else if (data.quiz) {
+                currentData = { title: data.title, type: 'quiz', cards: data.quiz };
+            } else {
+                alert("Invalid file format: No 'flashcards' or 'quiz' key found.");
+                return;
+            }
+
+            deckTitle.textContent = currentData.title || "Untitled Deck";
+            emptyState.style.display = 'none';
+            mainApp.style.display = 'flex';
+            saveBtn.disabled = false;
+
+            renderList();
+            // Select the first card by default
+            if (currentData.cards.length > 0) {
+                selectCard(0);
+            }
+        }
+
+        function downloadData() {
+            // Reconstruct the original format
+            const exportData = { title: currentData.title };
+            exportData[currentData.type] = currentData.cards;
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", (currentData.title || "deck") + ".json");
+            document.body.appendChild(downloadAnchorNode); // required for firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+
+        // --- UI Rendering ---
+        function renderList() {
+            cardList.innerHTML = '';
+            cardCount.textContent = `${currentData.cards.length} cards`;
+
+            currentData.cards.forEach((card, index) => {
+                const li = document.createElement('li');
+                li.className = 'list-item';
+                if (index === selectedIndex) li.classList.add('active');
+
+                // Show a preview text based on type
+                let previewText = "";
+                if (currentData.type === 'flashcards') {
+                    previewText = card.front;
+                } else {
+                    previewText = card.question;
+                }
+                li.textContent = (index + 1) + ". " + previewText;
+                li.onclick = () => selectCard(index);
+                cardList.appendChild(li);
+            });
+        }
+
+        function selectCard(index) {
+            selectedIndex = index;
+            isFlipped = false;
+            flipper.classList.remove('flipped');
+            renderList(); // To update active class
+            renderActiveCard();
+        }
+
+        function renderActiveCard() {
+            if (selectedIndex < 0 || selectedIndex >= currentData.cards.length) {
+                frontContent.textContent = "No card selected";
+                backContent.textContent = "";
+                return;
+            }
+
+            const card = currentData.cards[selectedIndex];
+
+            if (currentData.type === 'flashcards') {
+                frontContent.textContent = card.front;
+                backContent.textContent = card.back;
+            } else {
+                // Quiz Rendering
+                frontContent.textContent = "Q: " + card.question;
+
+                // Render options on the back for quiz
+                let optionsHtml = '<div class="quiz-options">';
+                if (card.options) {
+                    card.options.forEach(opt => {
+                         const isCorrectClass = opt.isCorrect ? 'correct' : '';
+                         optionsHtml += `<div class="quiz-option ${isCorrectClass}">${opt.text}</div>`;
+                    });
+                }
+                optionsHtml += '</div>';
+                if (card.answer) {
+                     optionsHtml += `<p><strong>Rationale:</strong> ${card.answer}</p>`;
+                }
+                backContent.innerHTML = optionsHtml;
+            }
+        }
+
+        function flipCard() {
+            if (selectedIndex >= 0) {
+                isFlipped = !isFlipped;
+                flipper.classList.toggle('flipped', isFlipped);
+            }
+        }
+
+        // --- Editing Logic ---
+        let isEditing = false;
+
+        function openAddModal() {
+            isEditing = false;
+            document.getElementById('modal-title').textContent = "Add New Card";
+            clearModalInputs();
+            showCorrectModalForm();
+            cardModal.classList.add('active');
+        }
+
+        function openEditModal() {
+            if (selectedIndex < 0) return;
+            isEditing = true;
+            document.getElementById('modal-title').textContent = "Edit Card";
+            const card = currentData.cards[selectedIndex];
+
+            if (currentData.type === 'flashcards') {
+                document.getElementById('edit-front').value = card.front;
+                document.getElementById('edit-back').value = card.back;
+            } else {
+                 document.getElementById('edit-question').value = card.question;
+            }
+            showCorrectModalForm();
+            cardModal.classList.add('active');
+        }
+
+        function showCorrectModalForm() {
+             document.getElementById('modal-form-flashcard').style.display =
+                currentData.type === 'flashcards' ? 'block' : 'none';
+             document.getElementById('modal-form-quiz').style.display =
+                currentData.type === 'quiz' ? 'block' : 'none';
+        }
+
+        function closeModal() {
+            cardModal.classList.remove('active');
+        }
+
+        function clearModalInputs() {
+            document.getElementById('edit-front').value = "";
+            document.getElementById('edit-back').value = "";
+            document.getElementById('edit-question').value = "";
+        }
+
+        function saveCard() {
+            const newCard = {};
+            if (currentData.type === 'flashcards') {
+                newCard.front = document.getElementById('edit-front').value;
+                newCard.back = document.getElementById('edit-back').value;
+            } else {
+                // For quiz, we only support editing the question text in this simple version
+                // to avoid breaking the complex 'options' array structure.
+                // Preserving existing options if editing.
+                if (isEditing) {
+                     Object.assign(newCard, currentData.cards[selectedIndex]);
+                }
+                newCard.question = document.getElementById('edit-question').value;
+            }
+
+            if (isEditing) {
+                currentData.cards[selectedIndex] = newCard;
+            } else {
+                currentData.cards.push(newCard);
+                selectedIndex = currentData.cards.length - 1;
+            }
+
+            closeModal();
+            renderList();
+            selectCard(selectedIndex);
+        }
+
+        function deleteCurrentCard() {
+            if (selectedIndex < 0) return;
+            if (confirm("Are you sure you want to delete this card?")) {
+                currentData.cards.splice(selectedIndex, 1);
+                // Adjust selected index
+                if (currentData.cards.length === 0) {
+                    selectedIndex = -1;
+                } else if (selectedIndex >= currentData.cards.length) {
+                    selectedIndex = currentData.cards.length - 1;
+                }
+                renderList();
+                selectCard(selectedIndex);
+            }
+        }
+    </script>
+</body>
+</html>

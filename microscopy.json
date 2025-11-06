@@ -1,0 +1,185 @@
+{
+  "title": "microscopy",
+  "flashcards": [
+    {
+      "front": "What is the first tenet of the modern Cell Theory?",
+      "back": "All living organisms are composed of one or more cells."
+    },
+    {
+      "front": "What is the second tenet of the modern Cell Theory?",
+      "back": "The cell is the basic unit of structure and organization in organisms."
+    },
+    {
+      "front": "What is the third tenet of the modern Cell Theory, contributed by Rudolf Virchow?",
+      "back": "Cells arise only from pre-existing cells (Omnis cellula e cellula)."
+    },
+    {
+      "front": "Who first observed 'cells' in cork tissue in 1665 and coined the term?",
+      "back": "Robert Hooke."
+    },
+    {
+      "front": "Who were the two scientists who formally proposed the cell doctrine in 1838, stating that all plants and animals are made of cells?",
+      "back": "Matthias Schleiden and Theodor Schwann."
+    },
+    {
+      "front": "In microscopy, what term describes the ability to distinguish between two closely spaced objects?",
+      "back": "Resolution."
+    },
+    {
+      "front": "What fundamental physical phenomenon limits the resolution of a conventional light microscope?",
+      "back": "The diffraction of light."
+    },
+    {
+      "front": "What is the approximate resolution limit of a conventional light microscope, largely determined by the wavelength of visible light?",
+      "back": "About 200 nm (0.2 micrometers)."
+    },
+    {
+      "front": "In the resolution formula $d = \\frac{0.61\\lambda}{n \\sin\\theta}$, what does the term '$n \\sin\\theta$' represent?",
+      "back": "The numerical aperture (NA) of the objective lens."
+    },
+    {
+      "front": "When two light waves are in phase (crest meets crest), they interfere to create a brighter signal. This phenomenon is called _____.",
+      "back": "Constructive interference."
+    },
+    {
+      "front": "When two light waves are out of phase, they can cancel each other out, resulting in a dimmer signal. This phenomenon is called _____.",
+      "back": "Destructive interference."
+    },
+    {
+      "front": "Why must tissue samples for light microscopy typically be cut into very thin sections?",
+      "back": "Most tissues are too thick for light to pass through, and sectioning allows for visualization of internal cellular structures."
+    },
+    {
+      "front": "What is the purpose of using a 'fixative' (like glutaraldehyde) in specimen preparation?",
+      "back": "To preserve the tissue by cross-linking proteins and macromolecules, locking them in place and preventing degradation."
+    },
+    {
+      "front": "What is the name of the instrument used to cut extremely thin slices of tissue for microscopy?",
+      "back": "A microtome."
+    },
+    {
+      "front": "Which light microscopy technique passes light directly through the specimen, making it suitable for stained samples but providing little contrast in unstained living cells?",
+      "back": "Bright-field microscopy."
+    },
+    {
+      "front": "Which light microscopy technique enhances contrast in unstained living cells by converting differences in refractive index into differences in brightness?",
+      "back": "Phase-contrast microscopy."
+    },
+    {
+      "front": "The technique of _____ microscopy uses oblique illumination so that only scattered light is seen, creating a bright image of the specimen against a dark background.",
+      "back": "Dark-field microscopy."
+    },
+    {
+      "front": "What is the fundamental principle of fluorescence?",
+      "back": "A molecule absorbs light at one wavelength (excitation) and emits it at a longer, lower-energy wavelength (emission)."
+    },
+    {
+      "front": "In a fluorescence microscope, what is the function of the first barrier filter?",
+      "back": "It allows only the specific wavelength of light that excites the fluorescent molecule to pass through to the specimen."
+    },
+    {
+      "front": "In a fluorescence microscope, what is the function of the second barrier filter (emission filter)?",
+      "back": "It blocks the excitation light and only allows the emitted light from the fluorescent molecule to pass through to the eyepiece or detector."
+    },
+    {
+      "front": "What is the technique that uses fluorescently labeled antibodies to detect specific proteins or other molecules within cells?",
+      "back": "Immunofluorescence."
+    },
+    {
+      "front": "In indirect immunocytochemistry, what does the secondary antibody bind to?",
+      "back": "The primary antibody, which is already bound to the target antigen."
+    },
+    {
+      "front": "What is a major advantage of using indirect immunocytochemistry over direct immunocytochemistry?",
+      "back": "It provides signal amplification because multiple secondary antibodies can bind to a single primary antibody."
+    },
+    {
+      "front": "What is Green Fluorescent Protein (GFP) and why is it a revolutionary tool in cell biology?",
+      "back": "It is a naturally fluorescent protein that can be genetically fused to a protein of interest, allowing its localization and dynamics to be studied in living cells."
+    },
+    {
+      "front": "How does confocal microscopy create a sharp optical section and eliminate out-of-focus blur?",
+      "back": "It uses a pinhole aperture to block out-of-focus light from reaching the detector, allowing only light from the plane of focus to be collected."
+    },
+    {
+      "front": "The computational process of _____ sharpens a blurry image from a conventional microscope by using a computer algorithm to reassign out-of-focus light to its point of origin.",
+      "back": "Deconvolution."
+    },
+    {
+      "front": "What is the general term for microscopy techniques that can resolve objects smaller than the 200 nm diffraction limit of light?",
+      "back": "Superresolution microscopy."
+    },
+    {
+      "front": "How does Structured Illumination Microscopy (SIM) achieve superresolution?",
+      "back": "It illuminates the sample with a patterned light grid, creating interference patterns (moiré fringes) that contain high-resolution information, which is then computationally reconstructed."
+    },
+    {
+      "front": "Techniques like PALM and STORM fall under a category of superresolution called _____, which builds an image by precisely locating individual fluorescent molecules that are switched on and off over time.",
+      "back": "Single-molecule localization microscopy (SMLM)."
+    },
+    {
+      "front": "What is the principle behind Fluorescence Resonance Energy Transfer (FRET)?",
+      "back": "Two fluorescent proteins interact when in very close proximity (1-10 nm), causing the energy from the first (donor) to be transferred to the second (acceptor) without emitting a photon."
+    },
+    {
+      "front": "What cellular process is FRET (Fluorescence Resonance Energy Transfer) typically used to study?",
+      "back": "The direct interaction between two different proteins in a living cell."
+    },
+    {
+      "front": "The technique of _____ involves intensely bleaching fluorophores in a small region of a cell and then measuring the rate at which unbleached molecules move back in, revealing information about molecular dynamics.",
+      "back": "Fluorescence recovery after photobleaching (FRAP)."
+    },
+    {
+      "front": "Why can an electron microscope achieve much higher resolution than a light microscope?",
+      "back": "The wavelength of an electron is much shorter than the wavelength of a photon of visible light."
+    },
+    {
+      "front": "Which type of electron microscope forms an image by passing a beam of electrons through an ultra-thin specimen?",
+      "back": "Transmission Electron Microscope (TEM)."
+    },
+    {
+      "front": "Which type of electron microscope creates a 3D-like image of a specimen's surface by detecting scattered or emitted electrons?",
+      "back": "Scanning Electron Microscope (SEM)."
+    },
+    {
+      "front": "Why must specimens for electron microscopy be placed in a vacuum?",
+      "back": "To prevent electrons from being scattered by colliding with air molecules."
+    },
+    {
+      "front": "What is the purpose of staining biological specimens with heavy metals (like uranium or osmium) for electron microscopy?",
+      "back": "Heavy metals are electron-dense and scatter electrons, which increases the contrast of different cellular structures in the final image."
+    },
+    {
+      "front": "What is the key specimen preparation technique used in cryo-electron microscopy (cryoEM) that avoids the need for chemical fixatives or staining?",
+      "back": "Rapid freezing of the specimen in vitreous (non-crystalline) ice, which preserves molecules in their near-native state."
+    },
+    {
+      "front": "What does single-particle reconstruction in cryoEM involve?",
+      "back": "Averaging thousands of 2D images of individual macromolecules in different orientations to computationally reconstruct a high-resolution 3D model."
+    },
+    {
+      "front": "The technique of _____ microscopy physically enlarges the specimen itself before imaging by embedding it in a swellable polymer gel, allowing conventional microscopes to achieve superresolution.",
+      "back": "Expansion microscopy (ExM)."
+    },
+    {
+      "front": "Which microscopy technique is ideal for imaging large, living specimens over long periods with minimal light damage by illuminating only a thin plane of the sample at a time?",
+      "back": "Light-sheet microscopy."
+    },
+    {
+      "front": "What is the principle of Total Internal Reflection Fluorescence (TIRF) microscopy?",
+      "back": "It uses an evanescent wave to selectively excite fluorophores only in a very thin region (typically <100 nm) of the specimen adjacent to the coverslip."
+    },
+    {
+      "front": "What cellular processes is TIRF microscopy particularly well-suited to study?",
+      "back": "Events occurring at or very near the plasma membrane, such as endocytosis or focal adhesion dynamics."
+    },
+    {
+      "front": "In histology, what common stain is used to color the negatively charged components of a cell, such as the nucleic acids in the nucleus, a purplish-blue?",
+      "back": "Hematoxylin."
+    },
+    {
+      "front": "What is the process of using a labeled nucleic acid probe to detect the location of a specific DNA or RNA sequence in a tissue or cell called?",
+      "back": "In situ hybridization."
+    }
+  ]
+}
