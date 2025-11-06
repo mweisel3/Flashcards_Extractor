@@ -86,7 +86,7 @@ def process_file(input_file, title, output_file=None):
         with open(output_filename, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-        print(f"\n✅ Success! Data extracted and saved to '{output_filename}'")
+        print(f"\n Success! Data extracted and saved to '{output_filename}'")
 
     except FileNotFoundError:
         print(f"Error: Input file '{input_file}' not found.", file=sys.stderr)
