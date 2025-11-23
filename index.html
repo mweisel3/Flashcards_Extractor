@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Deck Manager</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" defer></script>
+    <script src="edit.js" defer></script>
+    <script src="review.js" defer></script>
+</head>
+<body>
+
+    <header id="main-header">
+        <h1>
+            <span id="deck-title">New Deck</span>
+            <button class="btn btn-header" id="edit-title-btn" title="Edit Deck Title">✏️</button>
+        </h1>
+
+        <div class="toolbar">
+            <!-- File Ops are always visible in Edit Mode, hidden in Review via CSS/JS if needed,
+                 but we'll handle it via view switching -->
+            <div id="file-ops-toolbar" style="display:flex; gap:10px;">
+                <input type="file" id="file-upload" accept=".json" style="display: none">
+                <button class="btn btn-header" title="Load JSON Deck" onclick="document.getElementById('file-upload').click()">⬆️</button>
+                <button class="btn btn-header" id="save-btn" title="Save JSON Deck" disabled onclick="downloadData()">⬇️</button>
+            </div>
+
+            <div style="width: 1px; background: #dee2e6; margin: 0 5px;"></div>
+
+            <!-- Toggle Switch -->
+            <div class="mode-switch-container" id="mode-switch-container">
+                <span class="mode-label">Edit</span>
+                <label class="switch">
+                    <input type="checkbox" id="mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="mode-label">Review</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- EDITOR VIEW -->
+    <main id="editor-view">
+        <section id="list-column">
+            <div id="list-header">
+                <span id="card-count" style="flex-grow: 1;">0 cards</span>
+                <button class="btn btn-danger" id="bulk-delete-btn" title="Delete Selected" style="display: none;" disabled>🗑️</button>
+                <button class="btn btn-secondary" id="select-mode-btn" title="Select Multiple" onclick="toggleSelectMode()">☑️</button>
+                <button class="btn btn-primary" id="add-card-btn" title="Add New Card" onclick="openAddModal()">➕</button>
+            </div>
+
+            <div id="list-empty-state" style="display: none;">
+                <p>Click the ➕ to add your first card.</p>
+            </div>
+            <ul id="card-list">
+                <!-- List items go here -->
+            </ul>
+        </section>
+
+        <section id="flipper-column">
+            <div class="flipper-container" onclick="flipCard()">
+                <div class="flipper" id="editor-flipper">
+                    <div class="flipper-front">
+                        <div class="card-content" id="front-content">
+                            <div id="flipper-empty-state">
+                                <h2>Welcome!</h2>
+                                <p>Load a deck or add a new card to get started.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flipper-back">
+                         <div class="card-content" id="back-content"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flipper-controls" style="margin-top: 20px; display: flex; gap: 10px;">
+                <button class="btn btn-secondary" id="flip-btn" title="Flip" onclick="flipCard()" disabled>🔄</button>
+                <button class="btn btn-secondary" id="edit-btn" title="Edit Card" onclick="openEditModal()" disabled>✏️</button>
+                <button class="btn btn-danger" id="delete-btn" title="Delete Card" onclick="deleteCurrentCard()" disabled>🗑️</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- REVIEW VIEW -->
+    <main id="review-view" style="display: none;">
+        <div class="review-header">
+            <div class="timer-controls">
+                <span id="timer-setup">
+                    <input type="number" id="timer-input" value="15" min="1" class="timer-input"> min
+                </span>
+                <span id="timer-display" style="display: none; min-width: 60px;">00:00</span>
+
+                <button class="btn btn-success" id="timer-start-btn" title="Start Timer" onclick="startTimer()">▶️</button>
+                <button class="btn btn-secondary" id="timer-pause-btn" title="Pause Timer" onclick="pauseTimer()" style="display: none;">⏸️</button>
+                <button class="btn btn-danger" id="timer-stop-btn" title="Stop Timer" onclick="stopTimer()" disabled>⏹️</button>
+            </div>
+            <!-- Note: Exit button removed as it is now handled by the toggle -->
+        </div>
+
+        <div class="flipper-container" onclick="flipReviewCard()">
+            <div class="flipper" id="review-flipper">
+                <div class="flipper-front">
+                    <div class="card-content" id="review-front"></div>
+                </div>
+                <div class="flipper-back">
+                        <div class="card-content" id="review-back"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-controls">
+            <button class="btn btn-rate btn-know" title="Know" onclick="rateCard('know')">✅</button>
+            <button class="btn btn-rate btn-review" title="Review" onclick="rateCard('review')">👀</button>
+            <button class="btn btn-rate btn-struggle" title="Struggle" onclick="rateCard('struggle')">⚠️</button>
+        </div>
+    </main>
+
+    <!-- MODAL for Add/Edit -->
+    <div class="modal-overlay" id="card-modal">
+        <div class="modal">
+            <h2 id="modal-title">Edit Card</h2>
+            <div id="modal-form-flashcard">
+                <div class="form-group">
+                    <label for="edit-front">Front:</label>
+                    <textarea id="edit-front"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-back">Back:</label>
+                    <textarea id="edit-back"></textarea>
+                </div>
+            </div>
+             <div id="modal-form-quiz" style="display: none;">
+                <p><em>Editing complex quiz structures is not fully supported in this simple view yet. You can edit the main question text below.</em></p>
+                <div class="form-group">
+                    <label for="edit-question">Question:</label>
+                    <textarea id="edit-question"></textarea>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-cancel" title="Cancel" onclick="closeModal()">❌</button>
+                <button class="btn btn-success" title="Save Card" onclick="saveCard()">✔️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL for New Deck Type -->
+    <div class="modal-overlay" id="type-select-modal">
+        <div class="modal">
+            <h2>Create New Deck</h2>
+            <p>What type of deck would you like to create?</p>
+            <div class="modal-actions" style="justify-content: center; gap: 15px;">
+                <button class="btn-primary" onclick="setDeckType('flashcards')" style="width: auto; padding: 8px 16px; font-size: 1rem;">Flashcard Deck</button>
+                <button class="btn-primary" onclick="setDeckType('quiz')" style="width: auto; padding: 8px 16px; font-size: 1rem;">Quiz Deck</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
