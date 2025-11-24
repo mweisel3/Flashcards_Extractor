@@ -1,6 +1,6 @@
 // --- Review Mode Logic ---
 
-function startReviewMode() {
+function startReviewMode(filteredQueue) {
     // Switch Main Views
     document.getElementById('editor-view').style.display = 'none';
     document.getElementById('review-view').style.display = 'flex';
@@ -10,11 +10,15 @@ function startReviewMode() {
     document.getElementById('edit-title-btn').style.display = 'none';
 
     // Initialize Review Session
-    reviewQueue = currentData.cards.map((_, i) => i);
-    // Simple shuffle
-    for (let i = reviewQueue.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [reviewQueue[i], reviewQueue[j]] = [reviewQueue[j], reviewQueue[i]];
+    if (filteredQueue) {
+        reviewQueue = filteredQueue;
+    } else {
+        reviewQueue = currentData.cards.map((_, i) => i);
+        // Simple shuffle only for full deck review
+        for (let i = reviewQueue.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [reviewQueue[i], reviewQueue[j]] = [reviewQueue[j], reviewQueue[i]];
+        }
     }
 
     reviewIndex = 0;
@@ -40,6 +44,9 @@ function exitReviewMode() {
     document.getElementById('file-ops-toolbar').style.display = 'flex';
     document.getElementById('edit-title-btn').style.display = 'inline-block';
 
+    // Reset toggle switch if exiting manually
+    document.getElementById('mode-toggle').checked = false;
+
     if (typeof renderList === 'function') renderList();
     if (currentData.cards.length > 0) {
         if (typeof selectCard === 'function') selectCard(selectedIndex > -1 ? selectedIndex : 0);
@@ -56,12 +63,21 @@ function renderReviewCard() {
 
     if (reviewIndex >= reviewQueue.length) {
         // End of deck
-        reviewFront.innerHTML = `<h2>Session Complete! 🎉</h2>
-        <p>Know: ${sessionStats.know}</p>
-        <p>Review: ${sessionStats.review}</p>
-        <p>Struggle: ${sessionStats.struggle}</p>`;
+        reviewFront.innerHTML = `
+            <h2>Session Complete! 🎉</h2>
+            <p>Know: ${sessionStats.know}</p>
+            <p>Review: ${sessionStats.review}</p>
+            <p>Struggle: ${sessionStats.struggle}</p>
+            <div class="sub-deck-options">
+                <button class="btn btn-secondary" onclick="reviewSubDeck(['review', 'struggle'])">Review Weak Cards</button>
+                <button class="btn btn-primary" onclick="startReviewMode()">Restart Full Deck</button>
+            </div>
+        `;
         reviewBack.innerHTML = "";
         reviewFlipper.classList.remove('can-flip');
+
+        // Hide navigation/counter at end
+        // Using innerHTML overwrite above clears them from previous card
         return;
     }
 
@@ -69,6 +85,39 @@ function renderReviewCard() {
     const cardIdx = reviewQueue[reviewIndex];
     const card = currentData.cards[cardIdx];
     renderCardContent(card, reviewFront, reviewBack);
+
+    // Add Counter
+    const counter = document.createElement('div');
+    counter.className = 'card-counter';
+    counter.textContent = `${reviewIndex + 1} / ${reviewQueue.length}`;
+    reviewFront.appendChild(counter);
+
+    // Add Navigation
+    const nav = document.createElement('div');
+    nav.className = 'card-navigation';
+    nav.innerHTML = `
+        <button class="nav-btn" onclick="prevCard(event)" title="Previous Card">⬅️</button>
+        <button class="nav-btn" onclick="nextCard(event)" title="Next Card">➡️</button>
+    `;
+    // Stop propagation so clicking nav buttons doesn't flip card
+    nav.addEventListener('click', (e) => e.stopPropagation());
+    reviewFront.appendChild(nav);
+}
+
+function prevCard(event) {
+    if (event) event.stopPropagation();
+    if (reviewIndex > 0) {
+        reviewIndex--;
+        renderReviewCard();
+    }
+}
+
+function nextCard(event) {
+    if (event) event.stopPropagation();
+    if (reviewIndex < reviewQueue.length - 1) {
+        reviewIndex++;
+        renderReviewCard();
+    }
 }
 
 function flipReviewCard() {
@@ -87,6 +136,21 @@ function rateCard(status) {
 
     reviewIndex++;
     renderReviewCard();
+}
+
+function reviewSubDeck(statuses) {
+    // Filter cards based on their current status
+    const newQueue = currentData.cards
+        .map((card, index) => ({ card, index }))
+        .filter(item => statuses.includes(item.card.status))
+        .map(item => item.index);
+
+    if (newQueue.length === 0) {
+        alert("No cards found matching those criteria!");
+        return;
+    }
+
+    startReviewMode(newQueue);
 }
 
 // --- Timer Logic ---

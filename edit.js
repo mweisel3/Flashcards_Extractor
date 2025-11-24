@@ -64,10 +64,11 @@ function renderActiveCard() {
     const editBtn = document.getElementById('edit-btn');
     const deleteBtn = document.getElementById('delete-btn');
 
+    // FIX: Toggle display instead of rewriting innerHTML
     if (selectedIndex < 0 || selectedIndex >= currentData.cards.length) {
         flipperEmptyState.style.display = 'block';
-        frontContent.innerHTML = '';
-        frontContent.appendChild(flipperEmptyState);
+        frontContent.style.display = 'none';
+
         backContent.innerHTML = '';
         editorFlipper.classList.remove('can-flip');
         flipBtn.disabled = editBtn.disabled = deleteBtn.disabled = true;
@@ -75,6 +76,8 @@ function renderActiveCard() {
     }
 
     flipperEmptyState.style.display = 'none';
+    frontContent.style.display = 'block';
+
     editorFlipper.classList.add('can-flip');
     flipBtn.disabled = editBtn.disabled = deleteBtn.disabled = false;
 

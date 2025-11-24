@@ -19,8 +19,7 @@
         </h1>
 
         <div class="toolbar">
-            <!-- File Ops are always visible in Edit Mode, hidden in Review via CSS/JS if needed,
-                 but we'll handle it via view switching -->
+            <!-- File Ops are always visible in Edit Mode -->
             <div id="file-ops-toolbar" style="display:flex; gap:10px;">
                 <input type="file" id="file-upload" accept=".json" style="display: none">
                 <button class="btn btn-header" title="Load JSON Deck" onclick="document.getElementById('file-upload').click()">⬆️</button>
@@ -63,11 +62,14 @@
             <div class="flipper-container" onclick="flipCard()">
                 <div class="flipper" id="editor-flipper">
                     <div class="flipper-front">
-                        <div class="card-content" id="front-content">
-                            <div id="flipper-empty-state">
-                                <h2>Welcome!</h2>
-                                <p>Load a deck or add a new card to get started.</p>
-                            </div>
+                        <!-- FIX: Moved this OUTSIDE of card-content so it doesn't get deleted -->
+                        <div id="flipper-empty-state">
+                            <h2>Welcome!</h2>
+                            <p>Load a deck or add a new card to get started.</p>
+                        </div>
+
+                        <div class="card-content" id="front-content" style="display: none;">
+                            <!-- Content gets injected here -->
                         </div>
                     </div>
                     <div class="flipper-back">
@@ -97,7 +99,6 @@
                 <button class="btn btn-secondary" id="timer-pause-btn" title="Pause Timer" onclick="pauseTimer()" style="display: none;">⏸️</button>
                 <button class="btn btn-danger" id="timer-stop-btn" title="Stop Timer" onclick="stopTimer()" disabled>⏹️</button>
             </div>
-            <!-- Note: Exit button removed as it is now handled by the toggle -->
         </div>
 
         <div class="flipper-container" onclick="flipReviewCard()">
@@ -111,14 +112,20 @@
             </div>
         </div>
 
-        <div class="review-controls">
+        <div class="navigation-bar" id="review-nav-bar">
+            <button class="btn btn-secondary" onclick="prevCard()" title="Previous Card">⬅️</button>
+            <div class="card-counter" id="review-counter">1 / 10</div>
+            <button class="btn btn-secondary" onclick="nextCard()" title="Next Card">➡️</button>
+        </div>
+
+        <div class="review-controls" id="review-controls">
             <button class="btn btn-rate btn-know" title="Know" onclick="rateCard('know')">✅</button>
             <button class="btn btn-rate btn-review" title="Review" onclick="rateCard('review')">👀</button>
             <button class="btn btn-rate btn-struggle" title="Struggle" onclick="rateCard('struggle')">⚠️</button>
         </div>
     </main>
 
-    <!-- MODAL for Add/Edit -->
+    <!-- MODALs remain the same -->
     <div class="modal-overlay" id="card-modal">
         <div class="modal">
             <h2 id="modal-title">Edit Card</h2>
@@ -147,7 +154,6 @@
         </div>
     </div>
 
-    <!-- MODAL for New Deck Type -->
     <div class="modal-overlay" id="type-select-modal">
         <div class="modal">
             <h2>Create New Deck</h2>
