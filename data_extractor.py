@@ -83,7 +83,7 @@ def process_file(input_file, title, output_file=None):
             return
 
         # --- 6. Write Output JSON File ---
-        with open(output_filename, 'w', encoding='utf-8') as f:
+        with open(f"outputs/{output_filename}", 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
 
         success_message = f"\n✅ Success! Data extracted and saved to '{output_filename}'" if sys.stdout.encoding == "utf-8" else f"\n Success! Data extracted and saved to '{output_filename}'"
