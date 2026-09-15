@@ -1,0 +1,85 @@
+{
+  "title": "Proteins Amino Acids",
+  "flashcards": [
+    {
+      "front": "What are the fundamental monomeric units that constitute all proteins?",
+      "back": "Proteins are polymers constructed from 20 different types of amino acids linked together."
+    },
+    {
+      "front": "Describe the general structure of an $\\alpha$-amino acid.",
+      "back": "It consists of a central alpha-carbon ($\"C_{\\alpha}\"$) bonded to an amino group ($-NH_2$), a carboxyl group ($-COOH$), a hydrogen atom ($-H$), and a variable side chain (R group)."
+    },
+    {
+      "front": "What is a zwitterion in the context of amino acids?",
+      "back": "A zwitterion is a dipolar ion form of an amino acid where the amino group is protonated ($NH_3^+$) and the carboxyl group is deprotonated ($COO^-$), resulting in a net charge of zero."
+    },
+    {
+      "front": "List four major biological functions of proteins, with one example for each.",
+      "back": "1. Enzymatic catalysis (luciferase), 2. Transport and storage (hemoglobin), 3. Mechanical support (keratin, collagen), 4. Immune protection (antibodies)."
+    },
+    {
+      "front": "Which amino acid is the only one that is not chiral, and why?",
+      "back": "Glycine is not chiral because its R group is a single hydrogen atom, meaning the alpha-carbon is bonded to two identical hydrogen atoms and thus lacks four different substituents."
+    },
+    {
+      "front": "What is the predominant stereoisomeric form of amino acids found in proteins?",
+      "back": "The L-stereoisomer (L-amino acid) is the form almost exclusively found in proteins."
+    },
+    {
+      "front": "Amino acids are classified into groups based on what chemical property?",
+      "back": "They are classified based on the properties of their side chains (R groups), primarily their polarity and charge at physiological pH."
+    },
+    {
+      "front": "What is the defining characteristic of nonpolar, aliphatic amino acids like Valine and Leucine, and how does it affect protein structure?",
+      "back": "Their R groups are nonpolar and hydrophobic, causing them to cluster together in the interior of a protein to avoid water, which stabilizes the protein's structure through hydrophobic interactions."
+    },
+    {
+      "front": "Name the three amino acids with aromatic R groups.",
+      "back": "Phenylalanine (Phe), Tyrosine (Tyr), and Tryptophan (Trp)."
+    },
+    {
+      "front": "What functional group on Tyrosine's side chain allows it to participate in hydrogen bonding, unlike Phenylalanine?",
+      "back": "The hydroxyl ($-OH$) group on Tyrosine's aromatic ring allows it to act as a hydrogen bond donor or acceptor."
+    },
+    {
+      "front": "How is a disulfide bond formed in a protein?",
+      "back": "A disulfide bond (or cystine bridge) is a covalent bond formed by the oxidation of the thiol groups ($-SH$) of two Cysteine residues."
+    },
+    {
+      "front": "Name the two amino acids that have a negatively charged (acidic) R group at physiological pH (pH 7).",
+      "back": "Aspartate (Asp) and Glutamate (Glu)."
+    },
+    {
+      "front": "Name the three amino acids that have a positively charged (basic) R group at physiological pH (pH 7).",
+      "back": "Lysine (Lys), Arginine (Arg), and Histidine (His)."
+    },
+    {
+      "front": "Why is Histidine particularly important in the active sites of many enzymes?",
+      "back": "Its side chain has a pKa value of approximately 6.0, which is close to physiological pH, allowing it to easily act as both a proton donor and acceptor during enzymatic reactions."
+    },
+    {
+      "front": "What does it mean for an amino acid to be 'amphoteric' or an 'ampholyte'?",
+      "back": "It means the amino acid can act as either an acid (proton donor) or a base (proton acceptor)."
+    },
+    {
+      "front": "What is the isoelectric point (pI) of an amino acid?",
+      "back": "The pI is the specific pH at which the amino acid molecule has a net charge of zero and exists primarily in its zwitterionic form."
+    },
+    {
+      "front": "How do you calculate the pI for an amino acid with a non-ionizable R group, such as Glycine?",
+      "back": "The pI is the arithmetic mean of the pKa values for the $\\alpha$-carboxyl group (pKa1) and the $\\alpha$-amino group (pKa2); $pI = (pKa1 + pKa2) / 2$."
+    },
+    {
+      "front": "In the titration of Glycine, which group is deprotonated first as the pH increases from a very low value?",
+      "back": "The $\\alpha$-carboxyl group, which has the lower pKa (around 2.34), is the first group to lose its proton."
+    },
+    {
+      "front": "How is the pI calculated for an amino acid with an acidic R group, such as Glutamate?",
+      "back": "The pI is the arithmetic mean of the pKa values of the two acidic groups: the $\\alpha$-carboxyl group (pKa1) and the R group (pKR)."
+    },
+    {
+      "front": "How is the pI calculated for an amino acid with a basic R group, such as Histidine?",
+      "back": "The pI is the arithmetic mean of the pKa values of the two basic groups: the R group (pKR) and the $\\alpha$-amino group (pKa2)."
+    }
+  ]
+}

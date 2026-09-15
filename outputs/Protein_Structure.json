@@ -1,0 +1,85 @@
+{
+  "title": "Protein Structure",
+  "flashcards": [
+    {
+      "front": "What property of the peptide bond restricts rotation around the C-N bond, causing the six atoms of the peptide group to lie in a single plane?",
+      "back": "The partial double-bond character due to resonance."
+    },
+    {
+      "front": "What do the angles $\\phi$ (phi) and $\\psi$ (psi) represent in a polypeptide backbone?",
+      "back": "$\\phi$ is the angle of rotation around the bond between the $\\alpha$-carbon and the amino nitrogen, while $\\psi$ is the angle around the bond between the $\\alpha$-carbon and the carbonyl carbon."
+    },
+    {
+      "front": "What is the purpose of a Ramachandran plot in structural biology?",
+      "back": "It visualizes the sterically allowed combinations of $\\phi$ and $\\psi$ dihedral angles for amino acid residues in a polypeptide chain."
+    },
+    {
+      "front": "Describe the key structural features of a right-handed $\\alpha$-helix.",
+      "back": "The polypeptide backbone is tightly wound, with R groups protruding outward, and is stabilized by hydrogen bonds between the carbonyl oxygen of residue $n$ and the amide hydrogen of residue $n+4$."
+    },
+    {
+      "front": "Why is the amino acid Proline known as an '$\\alpha$-helix breaker'?",
+      "back": "Its rigid cyclic structure restricts the N-C$\\alpha$ bond rotation, and its nitrogen atom in a peptide bond has no hydrogen to contribute to the helix's hydrogen-bonding pattern."
+    },
+    {
+      "front": "In the $\\beta$ conformation, how are the side chains (R groups) of adjacent amino acids oriented relative to the plane of the sheet?",
+      "back": "They extend alternately above and below the plane of the sheet."
+    },
+    {
+      "front": "How does the hydrogen bonding pattern differ between parallel and antiparallel $\\beta$ sheets?",
+      "back": "In antiparallel sheets, the H-bonds are linear and thus stronger, whereas in parallel sheets, the H-bonds are angled and thus weaker."
+    },
+    {
+      "front": "Which two amino acids are commonly found in $\\beta$ turns, and what are their typical positions?",
+      "back": "Glycine and Proline are common; in Type II turns, Gly is often in position 3 and Pro in position 2 to facilitate the tight turn."
+    },
+    {
+      "front": "The fundamental structural unit of $\\alpha$-keratin is the _____, which consists of two intertwined right-handed $\\alpha$-helices.",
+      "back": "coiled coil"
+    },
+    {
+      "front": "What is the characteristic repeating amino acid sequence in collagen, and why is Glycine essential at every third position?",
+      "back": "The sequence is Gly-X-Y, where X is often Pro and Y is often 4-Hyp; Glycine is the only residue small enough to fit in the crowded interior of the three-stranded helix."
+    },
+    {
+      "front": "The structure of silk fibroin is predominantly composed of which secondary structure, allowing for its strength and flexibility?",
+      "back": "Stacked antiparallel $\\beta$ sheets, rich in Alanine and Glycine residues."
+    },
+    {
+      "front": "What level of protein structure is defined by the overall three-dimensional arrangement of all atoms in a single polypeptide chain?",
+      "back": "Tertiary structure."
+    },
+    {
+      "front": "What level of protein structure describes the arrangement of two or more separate polypeptide chains (subunits) in a multisubunit protein complex?",
+      "back": "Quaternary structure."
+    },
+    {
+      "front": "What was the key conclusion from Christian Anfinsen's experiments on the denaturation and renaturation of ribonuclease A?",
+      "back": "The amino acid sequence (primary structure) of a polypeptide chain contains all the information required to fold into its specific, native three-dimensional structure."
+    },
+    {
+      "front": "The temperature at which a protein solution's population is 50% folded (native) and 50% unfolded (denatured) is called the _____.",
+      "back": "melting temperature ($T_m$)"
+    },
+    {
+      "front": "What is the general function of molecular chaperones, such as the Hsp70 family, in a cell?",
+      "back": "They facilitate correct protein folding and help refold misfolded proteins by binding to unfolded regions and preventing aggregation."
+    },
+    {
+      "front": "In diseases like Alzheimer's, misfolded proteins aggregate to form insoluble extracellular deposits known as _____.",
+      "back": "amyloid fibrils (or plaques)"
+    },
+    {
+      "front": "The infectious agent in prion diseases is the misfolded protein PrP$^{Sc}$. How does it propagate infection?",
+      "back": "It acts as a template, inducing the properly folded cellular protein, PrP$^{C}$, to undergo a conformational change into the pathogenic PrP$^{Sc}$ form."
+    },
+    {
+      "front": "Which spectroscopic technique is best suited for determining the percentage of $\\alpha$-helix versus $\\beta$-sheet in a protein and for monitoring its unfolding process?",
+      "back": "Circular dichroism (CD) spectroscopy."
+    },
+    {
+      "front": "What is the term for a compact, locally folded region of a polypeptide chain that often has a specific function, such as a binding site?",
+      "back": "A domain."
+    }
+  ]
+}

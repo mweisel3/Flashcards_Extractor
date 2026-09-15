@@ -1,0 +1,205 @@
+{
+  "title": "biochemistry_intro",
+  "flashcards": [
+    {
+      "front": "What is the fundamental basis of a hydrogen bond?",
+      "back": "It is an electrostatic attraction between a hydrogen atom covalently bonded to an electronegative atom (the donor) and another electronegative atom (the acceptor)."
+    },
+    {
+      "front": "In a hydrogen bond, the hydrogen atom carries a partial _____ charge, while the acceptor atom (like oxygen or nitrogen) carries a partial _____ charge.",
+      "back": "positive ($\\delta$+); negative ($\\delta$-)"
+    },
+    {
+      "front": "What critical role do hydrogen bonds play in the structure of DNA?",
+      "back": "They stabilize the double helix structure by forming between complementary base pairs (A-T and G-C)."
+    },
+    {
+      "front": "Besides DNA, hydrogen bonds are also crucial for stabilizing the secondary and tertiary structures of what other major class of macromolecules?",
+      "back": "Proteins."
+    },
+    {
+      "front": "What type of non-specific, short-lived attractive force is generated when two atoms are in close proximity?",
+      "back": "Van der Waals interactions (or London dispersion forces)."
+    },
+    {
+      "front": "What causes van der Waals interactions to occur?",
+      "back": "They arise from transient, asymmetric distributions of electron charge around atoms, creating temporary dipoles."
+    },
+    {
+      "front": "How does the strength of van der Waals interactions compare to that of hydrogen bonds?",
+      "back": "Van der Waals interactions are individually weaker than hydrogen bonds."
+    },
+    {
+      "front": "The cumulative effect of many _____ interactions can be very significant in stabilizing macromolecular structures.",
+      "back": "van der Waals"
+    },
+    {
+      "front": "What term describes the tendency of nonpolar molecules to associate with each other in an aqueous environment?",
+      "back": "The hydrophobic effect."
+    },
+    {
+      "front": "Why is the aggregation of hydrophobic molecules in water energetically favorable?",
+      "back": "It increases the entropy of the surrounding water molecules by minimizing the number of ordered water molecules required to surround the nonpolar surfaces."
+    },
+    {
+      "front": "Molecules that have both a polar (hydrophilic) region and a nonpolar (hydrophobic) region are called _____.",
+      "back": "amphipathic"
+    },
+    {
+      "front": "What is the maximum number of hydrogen bonds a single water molecule can form?",
+      "back": "Four."
+    },
+    {
+      "front": "In liquid water, each water molecule forms an average of _____ hydrogen bonds with its neighbors.",
+      "back": "3.4"
+    },
+    {
+      "front": "In its solid form (ice), each water molecule is fixed in a crystal lattice and forms the maximum of _____ hydrogen bonds.",
+      "back": "four"
+    },
+    {
+      "front": "Why is water considered an excellent solvent for polar and charged substances?",
+      "back": "Its polarity allows it to form hydrogen bonds and electrostatic interactions with solutes, weakening the interactions between solute molecules and surrounding them with hydration shells."
+    },
+    {
+      "front": "What structures are formed when amphipathic molecules, like lipids, are placed in water, sequestering their hydrophobic tails away from the water?",
+      "back": "Micelles or bilayers."
+    },
+    {
+      "front": "The formation of micelles by amphipathic molecules in water is primarily driven by the _____.",
+      "back": "hydrophobic effect"
+    },
+    {
+      "front": "According to the Brønsted-Lowry definition, what is an acid?",
+      "back": "A substance that can donate a proton ($H^{+}$)."
+    },
+    {
+      "front": "According to the Brønsted-Lowry definition, what is a base?",
+      "back": "A substance that can accept a proton ($H^{+}$)."
+    },
+    {
+      "front": "The measure of hydrogen ion concentration in a solution is expressed as _____.",
+      "back": "pH"
+    },
+    {
+      "front": "What is the mathematical definition of pH?",
+      "back": "$pH = -log[H^{+}]$"
+    },
+    {
+      "front": "A solution with a pH of 3 is considered _____, while a solution with a pH of 9 is considered _____.",
+      "back": "acidic; basic (or alkaline)"
+    },
+    {
+      "front": "What is the pH of a neutral solution at $25^{\\circ}C$?",
+      "back": "7.0"
+    },
+    {
+      "front": "The sum of the pH and pOH in any aqueous solution at $25^{\\circ}C$ is always equal to what value?",
+      "back": "14."
+    },
+    {
+      "front": "What is the equilibrium constant for the dissociation of a weak acid called?",
+      "back": "The acid dissociation constant ($K_a$)."
+    },
+    {
+      "front": "A strong acid is characterized by a _____ $K_a$ value, indicating a _____ degree of dissociation.",
+      "back": "high; high"
+    },
+    {
+      "front": "A weak acid is characterized by a _____ $K_a$ value, indicating that it dissociates only partially in water.",
+      "back": "low"
+    },
+    {
+      "front": "What is the mathematical definition of $pK_a$?",
+      "back": "$pK_a = -log(K_a)$"
+    },
+    {
+      "front": "A strong acid has a _____ $pK_a$, while a weak acid has a _____ $pK_a$.",
+      "back": "low; high"
+    },
+    {
+      "front": "Which equation relates pH, $pK_a$, and the ratio of the concentrations of the conjugate base and acid forms of a weak acid?",
+      "back": "The Henderson-Hasselbalch equation."
+    },
+    {
+      "front": "Write the Henderson-Hasselbalch equation.",
+      "back": "$pH = pK_a + log \\frac{[A^{-}]}{[HA]}$"
+    },
+    {
+      "front": "At what point in a titration curve of a weak acid is the pH equal to the $pK_a$?",
+      "back": "When the concentration of the undissociated acid ($[HA]$) is equal to the concentration of its conjugate base ($[A^{-}]$)."
+    },
+    {
+      "front": "How does the pH of a solution affect the ability of a carboxyl group (e.g., in an amino acid) to form an ionic bond?",
+      "back": "At high pH, the group is deprotonated ($COO^{-}$), allowing it to form ionic bonds, but a significant drop in pH protonates it ($COOH$), neutralizing its charge and preventing ionic bond formation."
+    },
+    {
+      "front": "Nonpolar gases like $O_2$ and $N_2$ have poor solubility in water, so biological systems often use _____ such as hemoglobin and myoglobin to transport them.",
+      "back": "carrier proteins"
+    },
+    {
+      "front": "The hydrogen bond is strongest when the hydrogen atom and the two electronegative atoms it connects are arranged in a _____ line.",
+      "back": "straight"
+    },
+    {
+      "front": "What term describes molecules like glucose and glycerol that readily dissolve in water due to their ability to form hydrogen bonds?",
+      "back": "Hydrophilic ('water-loving')."
+    },
+    {
+      "front": "A substance that resists changes in pH when small amounts of acid or base are added is known as a _____.",
+      "back": "buffer"
+    },
+    {
+      "front": "What are biological buffers typically composed of?",
+      "back": "A mixture of a weak acid and its conjugate base."
+    },
+    {
+      "front": "The phosphate buffer system, crucial for maintaining intracellular pH, consists of the acid-base pair _____.",
+      "back": "$H_2PO_4^{-}$ (dihydrogen phosphate) and $HPO_4^{2-}$ (monohydrogen phosphate)"
+    },
+    {
+      "front": "The bicarbonate buffer system, which is essential for maintaining blood pH, involves an equilibrium between carbonic acid ($H_2CO_3$) and _____.",
+      "back": "bicarbonate ($HCO_3^{-}$)"
+    },
+    {
+      "front": "The ability of water to act as either an acid (proton donor) or a base (proton acceptor) makes it an _____ substance.",
+      "back": "amphoteric"
+    },
+    {
+      "front": "What is the ion product constant for water ($K_w$) at $25^{\\circ}C$?",
+      "back": "$1.0 \\times 10^{-14} M^2$"
+    },
+    {
+      "front": "The very short lifetime of individual hydrogen bonds in liquid water (on the order of picoseconds) contributes to its _____.",
+      "back": "fluidity"
+    },
+    {
+      "front": "How does the aggregation of nonpolar molecules in water affect the overall entropy of the system (solute + solvent)?",
+      "back": "It increases the total entropy of the system because the water molecules that were ordered around the individual nonpolar molecules become free and disordered."
+    },
+    {
+      "front": "Ionic interactions between dissolved ions in water are significantly _____ than they would be in a nonpolar solvent.",
+      "back": "weaker"
+    },
+    {
+      "front": "Why does water weaken ionic interactions?",
+      "back": "Water has a high dielectric constant, which means it effectively screens the electrostatic charges of the dissolved ions from each other."
+    },
+    {
+      "front": "In biological systems, where is the hydrophobic effect most important?",
+      "back": "It is the major driving force for the folding of proteins into their three-dimensional structures and the formation of lipid bilayer membranes."
+    },
+    {
+      "front": "What is the approximate bond dissociation energy for a C-C covalent bond?",
+      "back": "Around 350 kJ/mol."
+    },
+    {
+      "front": "What is the approximate bond dissociation energy for a typical hydrogen bond in an aqueous solution?",
+      "back": "Around 23 kJ/mol."
+    },
+    {
+      "front": "The fact that noncovalent interactions are individually weak allows them to be easily and reversibly broken, which is essential for the _____ of biological processes.",
+      "back": "dynamism"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Membrane_Structure",
+  "flashcards": [
+    {
+      "front": "What is the single common, defining feature of the chemically diverse group of compounds known as lipids?",
+      "back": "Their insolubility in water."
+    },
+    {
+      "front": "What two fundamental components make up a fatty acid molecule?",
+      "back": "A hydrocarbon chain and a terminal carboxyl group (COOH)."
+    },
+    {
+      "front": "In fatty acid nomenclature, such as 18:1($\\Delta^9$), what does the number preceding the colon (e.g., '18') represent?",
+      "back": "The total number of carbon atoms in the chain."
+    },
+    {
+      "front": "In the fatty acid notation 18:1($\\Delta^9$), what does the number following the colon (e.g., '1') signify?",
+      "back": "The number of double bonds in the hydrocarbon chain."
+    },
+    {
+      "front": "How does increasing the chain length of saturated fatty acids generally affect their melting point?",
+      "back": "It increases the melting point due to stronger van der Waals interactions."
+    },
+    {
+      "front": "Why do unsaturated fatty acids with cis double bonds have lower melting points than their saturated counterparts of the same length?",
+      "back": "The cis double bond introduces a 'kink' that prevents tight packing, reducing van der Waals forces between chains."
+    },
+    {
+      "front": "A triacylglycerol, also known as a triglyceride, is formed from the esterification of one _____ molecule and three _____ molecules.",
+      "back": "glycerol; fatty acid"
+    },
+    {
+      "front": "What is the primary biological function of triacylglycerols in vertebrates?",
+      "back": "They serve as the principal stored form of energy."
+    },
+    {
+      "front": "What are the three essential components of a glycerophospholipid?",
+      "back": "A glycerol backbone, two fatty acid tails, and a polar head group attached via a phosphate group."
+    },
+    {
+      "front": "What molecule forms the structural backbone of sphingolipids instead of glycerol?",
+      "back": "The long-chain amino alcohol, sphingosine."
+    },
+    {
+      "front": "The combination of a sphingosine backbone and a fatty acid linked by an amide bond results in a core structural parent of all sphingolipids called a _____.",
+      "back": "ceramide"
+    },
+    {
+      "front": "What is a major function of the carbohydrate moieties of glycosphingolipids located on the outer surface of plasma membranes?",
+      "back": "They serve as recognition sites, for example, in defining the A, B, O human blood groups."
+    },
+    {
+      "front": "What is the characteristic and rigid structural foundation of all sterols, including cholesterol?",
+      "back": "A steroid nucleus composed of four fused hydrocarbon rings."
+    },
+    {
+      "front": "Although mostly nonpolar, what specific chemical group gives cholesterol its amphipathic character, serving as its polar head group?",
+      "back": "The hydroxyl group at the C-3 position."
+    },
+    {
+      "front": "What is the primary thermodynamic driving force for the spontaneous formation of lipid bilayers in aqueous solutions?",
+      "back": "The hydrophobic effect, which minimizes the energetically unfavorable contact between hydrocarbon tails and water."
+    },
+    {
+      "front": "Lipid aggregation into a micelle is favored over a bilayer when the cross-sectional area of the polar head group is _____ than the cross-sectional area of the acyl tail(s).",
+      "back": "greater"
+    },
+    {
+      "front": "What is the precursor molecule in the skin that is converted to vitamin D$_3$ (cholecalciferol) upon exposure to ultraviolet light?",
+      "back": "7-dehydrocholesterol, a derivative of cholesterol."
+    },
+    {
+      "front": "The oxidized form of vitamin A, known as _____, is the molecule that functions as the photoreceptor pigment in the rod and cone cells of the retina.",
+      "back": "retinal"
+    },
+    {
+      "front": "What is the primary function of Vitamin K in the body?",
+      "back": "It is essential for blood clotting, as it participates in the formation of active prothrombin."
+    },
+    {
+      "front": "How does cholesterol modulate the fluidity of a biological membrane at physiological or higher temperatures?",
+      "back": "It decreases membrane fluidity by constraining the motion of fatty acyl chains, making the bilayer more rigid."
+    }
+  ]
+}

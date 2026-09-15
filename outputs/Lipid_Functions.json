@@ -1,0 +1,85 @@
+{
+  "title": "Lipid_Functions",
+  "flashcards": [
+    {
+      "front": "What are the two major groups into which vitamins are classified?",
+      "back": "Vitamins are classified as either fat-soluble (A, D, E, K) or water-soluble."
+    },
+    {
+      "front": "What common precursor serves as the starting material for the synthesis of fat-soluble vitamins and steroid hormones?",
+      "back": "Cholesterol is the precursor for many fat-soluble vitamins and all steroid hormones."
+    },
+    {
+      "front": "How is vitamin D3 (cholecalciferol) initially synthesized in the skin?",
+      "back": "It is formed from 7-dehydrocholesterol through a photochemical reaction driven by UV light."
+    },
+    {
+      "front": "What is the biologically active form of Vitamin D, and in which two organs is it sequentially activated?",
+      "back": "The active form is 1$\\alpha$,25-dihydroxyvitamin D3 (calcitriol), which is activated in the liver and then the kidney."
+    },
+    {
+      "front": "What is the primary physiological function of calcitriol (active Vitamin D)?",
+      "back": "It regulates calcium uptake in the intestine and controls calcium levels in the bones and kidneys."
+    },
+    {
+      "front": "A deficiency in Vitamin D can lead to _____, a disease characterized by defective bone formation and skeletal deformities.",
+      "back": "rickets"
+    },
+    {
+      "front": "What plant pigment is cleaved to yield two molecules of Vitamin A1 (all-trans-retinol)?",
+      "back": "$\\beta$-carotene is the precursor to Vitamin A1."
+    },
+    {
+      "front": "Which derivative of vitamin A acts as a hormone that regulates gene expression essential for epithelial tissue development?",
+      "back": "Retinoic acid functions as a hormone to regulate gene expression."
+    },
+    {
+      "front": "The visual pigment found in the rod and cone cells of the retina is _____, an aldehyde derivative of Vitamin A.",
+      "back": "retinal"
+    },
+    {
+      "front": "What is the primary role of Vitamin E (tocopherols) in biological systems?",
+      "back": "It acts as a biological antioxidant, protecting membrane lipids from oxidative damage by destroying oxygen radicals."
+    },
+    {
+      "front": "The primary function of Vitamin K is its essential role in the process of ____.",
+      "back": "blood clotting"
+    },
+    {
+      "front": "How does Vitamin K contribute to blood clotting?",
+      "back": "Its aromatic ring undergoes oxidation-reduction cycles to activate prothrombin, which in turn converts fibrinogen to fibrin to form a clot."
+    },
+    {
+      "front": "Structurally, how do steroid hormones differ from cholesterol?",
+      "back": "They are oxidized derivatives of sterols that lack the long alkyl side chain, making them more polar than cholesterol."
+    },
+    {
+      "front": "What is the general mechanism of action for steroid hormones after they enter a target cell?",
+      "back": "They bind to specific nuclear receptors and trigger changes in gene expression and metabolism."
+    },
+    {
+      "front": "What is the function of lipoproteins in the body?",
+      "back": "They transport hydrophobic lipids, such as triacylglycerols and cholesterol, through the aqueous environment of the bloodstream."
+    },
+    {
+      "front": "The proteins embedded in the shell of lipoproteins that direct them to target tissues are called _____.",
+      "back": "apolipoproteins"
+    },
+    {
+      "front": "Amphipathic lipids with a head group cross-section larger than their tail (wedge-shaped) tend to form what type of aggregate in water?",
+      "back": "They tend to form micelles."
+    },
+    {
+      "front": "In the fluid mosaic model, the rapid movement of a lipid within the plane of one leaflet is known as _____.",
+      "back": "lateral diffusion"
+    },
+    {
+      "front": "How do unsaturated fatty acids with cis-double bonds affect membrane fluidity?",
+      "back": "The 'kinks' created by cis-double bonds prevent tight packing of acyl chains, thereby increasing membrane fluidity."
+    },
+    {
+      "front": "How does cholesterol act as a 'fluidity buffer' at low temperatures?",
+      "back": "It inserts between phospholipids, preventing them from packing too closely and solidifying, thus maintaining fluidity."
+    }
+  ]
+}
